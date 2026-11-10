@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulator Penjadwalan CPU: SJF & Priority</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Simulator Penjadwalan CPU</h1>
+  <p>Algoritma SJF dan Priority Scheduling, lengkap dengan Gantt Chart</p>
+</header>
+<main>
+<section>
+  <h2>1. Pengaturan</h2>
+  <div class="opts">
+    <label>Algoritma
+      <select id="algo"><option value="sjf">SJF (Shortest Job First)</option><option value="pri">Priority Scheduling</option></select>
+    </label>
+    <label>Mode
+      <select id="mode"><option value="np">Non-preemptive</option><option value="p">Preemptive</option></select>
+    </label>
+  </div>
+  <p class="note" id="hint"></p>
+</section>
+
+<section>
+  <h2>2. Data proses</h2>
+  <div class="tw"><table id="inp">
+    <thead><tr><th>Proses</th><th>Arrival</th><th>Burst</th><th class="colp">Prioritas</th><th></th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <div class="opts" style="margin-top:12px">
+    <button id="add">+ Tambah proses</button>
+    <button id="ex">Muat contoh</button>
+    <button id="hitung" class="main">Hitung</button>
+  </div>
+  <p id="msg" class="err"></p>
+</section>
+
+<section id="out" class="hide">
+  <h2>3. Gantt Chart</h2>
+  <div class="gw"><div class="gantt" id="gantt"></div></div>
+  <h2 style="margin-top:8px">4. Tabel hasil</h2>
+  <div class="tw"><table id="res">
+    <thead><tr><th>Proses</th><th>Arrival</th><th>Burst</th><th class="colp">Prioritas</th><th>Completion</th><th>Turnaround</th><th>Waiting</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <div class="stat" style="margin-top:14px">
+    <div>Rata-rata Waiting Time<b id="awt"></b></div>
+    <div>Rata-rata Turnaround Time<b id="atat"></b></div>
+  </div>
+  <p class="note">TAT = Completion − Arrival. WT = TAT − Burst. Jika seri, dipilih proses yang datang lebih dulu (FCFS).</p>
+</section>
+</main>
+
+<footer class="site-footer">
+  <p>
+    &copy; 2026
+    <span class="footer-divider">|</span>
+    <strong>WATER EYES</strong>
+  </p>
+</footer>
+
+<script src="scheduler.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
